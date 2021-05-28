@@ -1,0 +1,25 @@
+.left li {
+    background-color: #808080;
+    margin-bottom: 2px;
+    color: #ffc107;
+    font-size: 25px;
+}
+
+.left li:hover {
+    background-color: #ffc107;
+    color: #808080;
+}
+
+input,
+textarea,
+select,
+#btnSend {
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+section p:first-line {
+    color: #3928fc;
+    font-weight: 1000;
+    font-size: 25px;
+}

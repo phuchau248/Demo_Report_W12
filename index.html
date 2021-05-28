@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>DEMO WEBSITE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="public/css/myStyle.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+    <header class="bg-info">
+        <div> </div>
+        <div class="container m-auto">
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="" src="public/images/fpt-logo.png" alt="FPT University">
+                </div>
+                <div class="col-md-4">
+
+                </div>
+                <div class="col-md-4">
+                    <div class="card col-md-8 offset-md-2 mt-2 mb-2">
+                        <div class="card-header bg-warning text-white text-center">
+                            <h4>ĐĂNG NHẬP</h4>
+                        </div>
+                        <div class="card-body">
+                            <button id="btnLogin" class="btn btn-warning btn-block col-10 offset-1" onclick='loginModal()' type="submit"> Click để đăng nhập
+                                    </button>
+                            <!-- <div id="content"></div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="row">
+        <div class="col-md-3  mt-2 mr-2">
+            <section class="left text-center bg-info">
+                <div class="col-md-10 offset-md-1">
+                    <ul class="list-group p-2"> Khóa học
+                        <li class="list-group-item">WED</li>
+                        <li class="list-group-item">Python</li>
+                        <li class="list-group-item">English</li>
+                    </ul>
+                </div>
+                <form id="askForm">
+                    <div class="form-group col-md-10 offset-md-1">
+                        <caption>Gửi câu hỏi của bạn ở đây</caption><br>
+                        <input class="form-control" type="text" placeholder="MSSV" id="mssvForm" disabled>
+                        <textarea class="form-control" rows="5" cols="50" id="content" required>nội dung</textarea>
+                        <label for="uni">Đơn vị</label><br>
+                        <select class="form-control" name="uni" id="uni">
+                            <option value="ĐH FPT">ĐH FPT</option>
+                            <option value="ĐH Greenwich(VN)">ĐH Greenwich(VN)</option>
+                            <option value="FUNiX">FUNiX</option>
+                        </select>
+                        <button id="btnSend" class="form-control" type="submit">Gửi </button> <br>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <div class="col-md-9 mt-2  bg-info">
+            <section class="right ">
+                <p>Sứ mệnh của Trường Đại học FPT<br/> “Cung cấp năng lực cạnh tranh toàn cầu cho đông đảo người học, góp phần mở mang bờ cõi trí tuệ đất nước.” </p>
+                <p>Tầm nhìn của Trường Đại học FPT<br/> Tầm nhìn được thể hiện trong từ khoá iGSM – [Industry Relevant – Global – Smart Education – Mega]. Trở thành một hệ thống giáo dục Mega mang tính quốc tế, đáp ứng nhu cầu xã hội và dựa trên các công
+                    nghệ đào tạo tiên tiến nhất </p>
+                <p>Triết lí giáo dục của Trường Đại học FPT<br/> Giáo dục đào tạo là tổ chức và quản trị việc tự học của người học.</p>
+                <p>Văn hóa của Trường Đại học FPT<br/>
+                    <ul>
+                        <li>Tôn đổi đồng chí gương sáng </li>
+                        <li>Học thật, thi thật, thành công thật </li>
+                        <li>Làm khác để làm tốt</li>
+                    </ul>
+            </section>
+        </div>
+    </div>
+    <footer class="footer bg-info mt-2 text-center p-1">
+        <p>FPT University HCM
+            <br/>Lô E2a-7, Đường D1, Khu Công Nghệ Cao, Long Thạnh Mỹ, Quận 9, Thành phố Hồ Chí Minh 700000
+            <br/>Website: https://hcmuni.fpt.edu.vn </p>
+    </footer>
+</body>
+<!-- bootstrap modal -->
+<div id='loginModal' class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Nhập thông tin học viên</h5>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <input type="text" class="form-control mb-2" aria-describedby="emailHelp" id="mssv" placeholder="Mã số sinh viên" required />
+                    <input type="password" class="form-control mb-2" aria-describedby="emailHelp" id="password" plsaceholder="Mật khẩu" required />
+                </form>
+            </div>
+            <div id='result' class="text-center"> </div>
+            <div class="modal-footer">
+                <button type="submit" id="btnSubmit" class="btn btn-primary">Đăng nhập</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+<script src="public/js/script.js"></script>
+
+</html>
