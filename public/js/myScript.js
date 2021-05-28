@@ -1,7 +1,3 @@
-function loginModal() {
-    $('#loginModal').modal('show');
-}
-
 function changeLogin(mssv) {
     $('#loginModal').modal('hide');
     $('h4').empty();
@@ -11,16 +7,24 @@ function changeLogin(mssv) {
     $("#mssvForm").val(mssv);
 }
 
-$(document).ready(function() {
-    let login = false;
+$(document).ready(function () {
+    let loginState = false;
 
-    $("#btnSubmit").click(function() {
+    $("#btnLogin").click(function () {
+        if (loginState === false) {
+            $('#loginModal').modal('show');
+        } else {
+            location.reload();
+        }
+    });
+
+    $("#btnSubmit").click(function () {
         let password = $('#password').val();
         let mssv = $('#mssv').val()
         if (mssv !== '') {
             if (password === '123456') {
                 changeLogin(mssv);
-                login = true;
+                loginState = true;
             } else {
                 $('#result').empty();
                 $('#result').append('Sai mật khẩu (hint: 123456)');
@@ -31,8 +35,8 @@ $(document).ready(function() {
         }
     });
 
-    $('#askForm').on('submit', function(e) {
-        if (login === true) {
+    $('#askForm').on('submit', function (e) {
+        if (loginState === true) {
             let op = window.open("", "", "width=300,height=300");
             op.document.write("<p style='font-size:30px'><b>Xác nhận gửi câu hỏi</b></p>");
             op.document.write("<p>Tên của bạn: " + $("#mssvForm").val() + " </p>");
